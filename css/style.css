@@ -1871,7 +1871,7 @@ h3 {
 
 /* line 111, ../../Arafath/CL/Cl November/228. Resume-02/HTML/scss/_counter.scss */
 .home_details .modern_home_info .modern_home_info_inner .info_content ul li span {
-  color: #001D38;
+  color: #eef1f3;
   font-size: 13px;
   font-weight: 400;
 }
@@ -2602,7 +2602,7 @@ h3 {
 .gallery_area .project_technology {
     display: block;
     margin-bottom: 10px;
-    color: #777777;
+    color: #f1d5d5;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.6px;
@@ -2620,7 +2620,7 @@ h3 {
 /* Project Title */
 .gallery_area .project_card .gallery_heading h4 {
     margin: 0 0 12px;
-    color: #311E25;
+    color: #31241e;
     font-size: 23px;
     font-weight: 500;
     line-height: 1.4;
@@ -6467,6 +6467,8 @@ h6 {
 }
 
 
+
+
 /* =========================================
    My Works / Gallery
    ========================================= */
@@ -6611,5 +6613,6 @@ h6 {
         line-height: 1.6;
     }
 }
+
 
 /*# sourceMappingURL=style.css.map */
