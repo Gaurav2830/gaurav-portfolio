@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coming Soon | Under Construction</title>
+    <title>Coming Soon | Gaurav Pawar</title>
+
+    <meta name="description"
+        content="Gaurav Pawar Data Analyst Portfolio — Website currently under construction.">
 
     <style>
         :root {
             --primary: rgba(168, 120, 81, 1);
-            --primary-light: hsl(27, 35%, 60%);
+            --primary-light: hsl(27, 35%, 65%);
             --primary-dark: hsl(27, 35%, 35%);
 
             --bg-dark: #17120f;
@@ -19,7 +22,15 @@
             --white: #ffffff;
             --cream: #eee4d9;
             --muted: #b9aaa0;
+            --muted-dark: #82766e;
+
+            --glass-bg: rgba(255, 255, 255, 0.035);
+            --glass-border: rgba(168, 120, 81, 0.22);
         }
+
+        /* =========================================
+           RESET
+        ========================================= */
 
         * {
             margin: 0;
@@ -27,52 +38,79 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: var(--white);
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            overflow: hidden;
+            overflow-x: hidden;
 
             background:
-                radial-gradient(circle at 15% 20%,
+                radial-gradient(
+                    circle at 15% 20%,
                     rgba(168, 120, 81, 0.25),
-                    transparent 30%),
-                radial-gradient(circle at 85% 80%,
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
                     rgba(168, 120, 81, 0.18),
-                    transparent 35%),
-                linear-gradient(135deg,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
                     var(--bg-dark),
-                    var(--bg-medium));
+                    var(--bg-medium)
+                );
         }
 
-        /* Background */
+
+        /* =========================================
+           ANIMATED BACKGROUND
+        ========================================= */
+
         .background {
             position: fixed;
             inset: 0;
+
             overflow: hidden;
+
             z-index: -1;
+
+            pointer-events: none;
         }
 
         .circle {
             position: absolute;
+
             border-radius: 50%;
 
             background: var(--primary);
 
             filter: blur(80px);
+
             opacity: 0.12;
 
-            animation: float 10s infinite ease-in-out;
+            animation:
+                float 10s infinite ease-in-out;
         }
 
         .circle:nth-child(1) {
             width: 350px;
             height: 350px;
+
             top: -150px;
             left: -100px;
         }
@@ -80,16 +118,20 @@
         .circle:nth-child(2) {
             width: 300px;
             height: 300px;
+
             right: -100px;
             bottom: -100px;
+
             animation-delay: 2s;
         }
 
         .circle:nth-child(3) {
             width: 180px;
             height: 180px;
+
             right: 20%;
             top: 45%;
+
             animation-delay: 4s;
         }
 
@@ -105,55 +147,81 @@
             }
         }
 
-        /* Main Container */
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
         .container {
-            width: 90%;
-            max-width: 850px;
+            width: 92%;
+            max-width: 900px;
 
             text-align: center;
 
-            padding: 45px 30px;
+            padding: 45px 25px;
         }
 
-        /* Logo */
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
         .logo {
-            font-size: 28px;
-            font-weight: 800;
+            display: inline-block;
 
-            letter-spacing: 3px;
+            margin-bottom: 42px;
 
-            margin-bottom: 45px;
-
-            color: var(--cream);
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
         }
 
-        .logo span {
-            color: var(--primary);
+        .logo:hover {
+            transform: translateY(-2px);
+
+            opacity: 0.9;
         }
 
-        /* Icon */
+        .logo img {
+            max-width: 180px;
+            height: auto;
+
+            display: block;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           CONSTRUCTION ICON
+        ========================================= */
+
         .icon {
-            width: 85px;
-            height: 85px;
+            width: 88px;
+            height: 88px;
 
             margin: 0 auto 28px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 50%;
 
-            background: rgba(168, 120, 81, 0.12);
+            background:
+                rgba(168, 120, 81, 0.12);
 
-            border: 1px solid rgba(168, 120, 81, 0.35);
+            border:
+                1px solid rgba(168, 120, 81, 0.35);
 
             font-size: 38px;
 
             box-shadow:
                 0 15px 50px rgba(0, 0, 0, 0.3);
 
-            animation: pulse 3s infinite;
+            animation:
+                pulse 3s infinite ease-in-out;
         }
 
         @keyframes pulse {
@@ -161,20 +229,27 @@
             0%,
             100% {
                 transform: scale(1);
+
                 box-shadow:
                     0 15px 50px rgba(0, 0, 0, 0.3);
             }
 
             50% {
-                transform: scale(1.04);
+                transform: scale(1.05);
+
                 box-shadow:
                     0 15px 60px rgba(168, 120, 81, 0.18);
             }
         }
 
-        /* Heading */
+
+        /* =========================================
+           HEADING
+        ========================================= */
+
         h1 {
-            font-size: clamp(42px, 7vw, 76px);
+            font-size:
+                clamp(42px, 7vw, 76px);
 
             line-height: 1.05;
 
@@ -183,15 +258,21 @@
             margin-bottom: 22px;
 
             color: var(--cream);
+
+            letter-spacing: -1.5px;
         }
 
         h1 span {
             color: var(--primary);
         }
 
-        /* Description */
+
+        /* =========================================
+           DESCRIPTION
+        ========================================= */
+
         .subtitle {
-            max-width: 620px;
+            max-width: 650px;
 
             margin: 0 auto;
 
@@ -202,7 +283,34 @@
             line-height: 1.7;
         }
 
-        /* Countdown */
+
+        /* =========================================
+           DEADLINE TEXT
+        ========================================= */
+
+        .deadline {
+            margin-top: 22px;
+
+            color: var(--primary-light);
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        .deadline strong {
+            color: var(--cream);
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           COUNTDOWN
+        ========================================= */
+
         .countdown {
             display: flex;
 
@@ -210,27 +318,44 @@
 
             gap: 15px;
 
-            margin: 42px 0;
+            margin: 38px 0 40px;
 
             flex-wrap: wrap;
         }
 
-        .time-box {
-            min-width: 105px;
 
-            padding: 18px 15px;
+        /* =========================================
+           TIME BOX
+        ========================================= */
+
+        .time-box {
+            min-width: 110px;
+
+            padding: 20px 15px;
 
             border-radius: 14px;
 
             background:
-                rgba(168, 120, 81, 0.08);
+                linear-gradient(
+                    145deg,
+                    rgba(168, 120, 81, 0.10),
+                    rgba(255, 255, 255, 0.025)
+                );
 
             border:
-                1px solid rgba(168, 120, 81, 0.22);
+                1px solid var(--glass-border);
 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
 
-            transition: 0.3s ease;
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.15);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
         }
 
         .time-box:hover {
@@ -243,14 +368,19 @@
                 rgba(168, 120, 81, 0.45);
         }
 
+
         .time-box strong {
             display: block;
 
-            font-size: 32px;
+            font-size: 34px;
 
-            margin-bottom: 6px;
+            line-height: 1;
+
+            margin-bottom: 8px;
 
             color: var(--cream);
+
+            font-weight: 700;
         }
 
         .time-box small {
@@ -258,16 +388,25 @@
 
             text-transform: uppercase;
 
-            font-size: 11px;
+            font-size: 10px;
 
             letter-spacing: 1.5px;
         }
 
-        /* Button */
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
         .button {
-            display: inline-block;
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
 
             padding: 15px 32px;
+
+            min-width: 150px;
 
             border-radius: 50px;
 
@@ -280,10 +419,10 @@
 
             font-weight: 700;
 
-            transition: 0.3s ease;
-
-            box-shadow:
-                0 10px 30px rgba(168, 120, 81, 0.25);
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
         .button:hover {
@@ -296,45 +435,205 @@
                 0 15px 40px rgba(168, 120, 81, 0.4);
         }
 
-        /* Footer */
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
         .footer {
             margin-top: 50px;
 
-            color: #82766e;
+            color: var(--muted-dark);
 
             font-size: 13px;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
+        .footer_top {
+            padding-top: 10px;
+        }
+
+        .lets_talk {
+            margin-bottom: 35px;
+        }
+
+        .lets_talk h3 {
+            color: var(--cream);
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+
+            line-height: 1.4;
+        }
+
+        .lets_talk h3 a {
+            color: var(--primary);
+
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+        }
+
+        .lets_talk h3 a:hover {
+            color: var(--primary-light);
+        }
+
+        .lets_talk p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           SOCIAL / FOOTER LINKS
+        ========================================= */
+
+        .footer-links {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .single_links {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 13px 16px;
+
+            border-radius: 8px;
+
+            background:
+                rgba(168, 120, 81, 0.05);
+
+            border:
+                1px solid rgba(168, 120, 81, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .single_links:hover {
+            transform: translateY(-3px);
+
+            background:
+                rgba(168, 120, 81, 0.10);
+
+            border-color:
+                rgba(168, 120, 81, 0.30);
+        }
+
+        .single_links span {
+            color: var(--muted);
+        }
+
+        .single_links a {
+            color: var(--primary-light);
+
+            font-size: 17px;
+
+            text-decoration: none;
+        }
+
+        .single_links a:hover {
+            color: var(--cream);
+        }
+
+
+        /* =========================================
+           COPYRIGHT
+        ========================================= */
+
+        .copy-right_text {
+            margin-top: 30px;
+        }
+
+        .footer_border {
+            width: 100%;
+
+            height: 1px;
+
+            margin-bottom: 20px;
+
+            background:
+                rgba(168, 120, 81, 0.12);
+        }
+
+        .copy_right {
+            color: var(--muted-dark);
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
 
             .container {
-                padding: 30px 15px;
+                width: 94%;
+
+                padding:
+                    30px 10px;
             }
 
             .logo {
-                font-size: 23px;
-                margin-bottom: 35px;
+                margin-bottom: 32px;
+            }
+
+            .logo img {
+                max-width: 150px;
             }
 
             .icon {
                 width: 75px;
                 height: 75px;
+
                 font-size: 32px;
+            }
+
+            h1 {
+                font-size:
+                    clamp(38px, 12vw, 55px);
+
+                letter-spacing: -1px;
             }
 
             .subtitle {
                 font-size: 16px;
+
+                line-height: 1.65;
             }
 
             .countdown {
                 gap: 8px;
-                margin: 32px 0;
+
+                margin:
+                    30px 0 35px;
             }
 
             .time-box {
                 min-width: 76px;
-                padding: 14px 8px;
+
+                padding:
+                    14px 8px;
             }
 
             .time-box strong {
@@ -343,18 +642,65 @@
 
             .time-box small {
                 font-size: 9px;
+
+                letter-spacing: 1px;
             }
 
             .button {
-                padding: 13px 27px;
+                padding:
+                    13px 27px;
+            }
+
+            .footer {
+                margin-top: 40px;
+            }
+
+            .lets_talk h3 {
+                font-size: 21px;
+            }
+
+            .lets_talk p {
+                font-size: 13px;
+            }
+
+            .footer-links {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 8px;
+            }
+
+            .single_links {
+                padding:
+                    11px 12px;
+            }
+        }
+
+
+        @media (max-width: 400px) {
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .time-box {
+                min-width: 70px;
+            }
+
+            .time-box strong {
+                font-size: 23px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- Animated Background -->
+    <!-- =========================================
+         ANIMATED BACKGROUND
+    ========================================== -->
+
     <div class="background">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -362,35 +708,57 @@
     </div>
 
 
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
     <main class="container">
 
         <!-- Logo -->
+
         <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Logo">
+            <img src="img/logo.png"
+                alt="Gaurav Pawar Logo">
         </a>
 
 
         <!-- Construction Icon -->
+
         <div class="icon">
             🚧
         </div>
 
 
         <!-- Heading -->
+
         <h1>
-            We'll Be <span>Right Back.</span>
+            We'll Be
+            <span>Right Back.</span>
         </h1>
 
 
         <!-- Description -->
+
         <p class="subtitle">
             Our website is currently under construction.
-            We're working hard to bring you something amazing.
-            Stay tuned — we'll be launching soon!
+            I'm working on something better to showcase my
+            data analytics projects, skills and experience.
+            Stay tuned — the updated portfolio will be available soon!
         </p>
 
 
+        <!-- Automatically calculated deadline -->
+
+        <div class="deadline">
+            Launch target:
+            <strong id="deadline-date">
+                End of this month
+            </strong>
+        </div>
+
+
         <!-- Countdown -->
+
         <div class="countdown">
 
             <div class="time-box">
@@ -416,133 +784,278 @@
         </div>
 
 
-        <!-- footer start -->
+        <!-- Back to portfolio -->
+
+        <a href="index.html"
+            class="button">
+            Back to Portfolio
+        </a>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
         <footer class="footer">
+
             <div class="footer_top">
-                <div class="container">
 
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="lets_talk">
-                                <h3>
-                                    Have a Data Project?
-                                    <a href="mailto:gauravpawar28396@gmail.com">
-                                        Let’s Talk
-                                    </a>
-                                </h3>
+                <div class="lets_talk">
 
-                                <p>
-                                    Looking for a Data Analyst who can turn raw data into
-                                    meaningful insights? I work with SQL, Python, Power BI,
-                                    Tableau and Excel to build dashboards, analyze business
-                                    data and support data-driven decision making.
-                                </p>
-                            </div>
-                        </div>
+                    <h3>
+                        Have a Data Project?
+                        <a href="mailto:gauravpawar28396@gmail.com">
+                            Let's Talk
+                        </a>
+                    </h3>
+
+                    <p>
+                        Looking for a Data Analyst who can turn raw
+                        data into meaningful insights? I work with SQL,
+                        Python, Power BI, Tableau and Excel to build
+                        dashboards, analyze business data and support
+                        data-driven decision making.
+                    </p>
+
+                </div>
+
+
+                <!-- Footer Links -->
+
+                <div class="footer-links">
+
+                    <!-- LinkedIn -->
+
+                    <div class="single_links">
+
+                        <span>
+                            LinkedIn
+                        </span>
+
+                        <a href="https://www.linkedin.com/in/gauravpawar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Gaurav Pawar LinkedIn">
+
+                            LinkedIn
+
+                        </a>
+
                     </div>
 
-                    <div class="row">
 
-                        <!-- LinkedIn -->
-                        <div class="col-md-3">
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>LinkedIn</span>
-                                <a href="https://www.linkedin.com/in/gauravpawar" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Gaurav Pawar LinkedIn">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <!-- GitHub -->
 
-                        <!-- GitHub -->
-                        <div class="col-md-3">
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>GitHub</span>
-                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Gaurav Pawar GitHub">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="single_links">
 
-                        <!-- Email -->
-                        <div class="col-md-3">
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Email</span>
-                                <a href="mailto:gauravpawar28396@gmail.com" aria-label="Email Gaurav Pawar">
-                                    <i class="fa fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <span>
+                            GitHub
+                        </span>
 
-                        <!-- Resume -->
-                        <div class="col-md-3">
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Resume</span>
-                                <a href="Gaurav_Pawar_Data_Analyst_Resume.pdf" target="_blank"
-                                    aria-label="View Gaurav Pawar Resume">
-                                    <i class="fa fa-file-text"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://github.com/gaurav2830"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Gaurav Pawar GitHub">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="single_links">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <a href="mailto:gauravpawar28396@gmail.com"
+                            aria-label="Email Gaurav Pawar">
+
+                            Email
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Resume -->
+
+                    <div class="single_links">
+
+                        <span>
+                            Resume
+                        </span>
+
+                        <a href="Gaurav_Pawar_Data_Analyst_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View Gaurav Pawar Resume">
+
+                            Resume
+
+                        </a>
 
                     </div>
 
                 </div>
+
             </div>
+
+
+            <!-- Copyright -->
 
             <div class="copy-right_text">
-                <div class="container">
 
-                    <div class="footer_border"></div>
+                <div class="footer_border"></div>
 
-                    <div class="row">
-                        <div class="col-xl-12">
+                <p class="copy_right">
 
-                            <p class="copy_right text-center">
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                Gaurav Vijay Pawar. All rights reserved.
-                            </p>
+                    Copyright &copy;
 
-                        </div>
-                    </div>
+                    <span id="current-year"></span>
 
-                </div>
+                    Gaurav Vijay Pawar.
+                    All rights reserved.
+
+                </p>
+
             </div>
-        </footer>
-        <!--/ footer end -->
 
+        </footer>
 
     </main>
 
 
+    <!-- =========================================
+         AUTOMATIC MONTH-END COUNTDOWN
+    ========================================== -->
+
     <script>
 
-        /* ===============================
-           WEBSITE LAUNCH DATE
-        =============================== */
+        /*
+        =====================================================
+        AUTOMATIC MONTH-END DEADLINE
+        =====================================================
 
-        const launchDate =
-            new Date("September 30, 2026 12:00:00").getTime();
+        This function calculates the last day of the
+        CURRENT month automatically.
+
+        Example:
+
+        October 2026
+        -> October 31, 2026
+
+        November 2026
+        -> November 30, 2026
+
+        December 2026
+        -> December 31, 2026
+
+        January 2027
+        -> January 31, 2027
+
+        No manual date update is required.
+        =====================================================
+        */
+
+        function getMonthEnd() {
+
+            const now = new Date();
+
+            /*
+            new Date(year, month + 1, 0)
+            returns the last day of the current month.
+            */
+
+            return new Date(
+                now.getFullYear(),
+                now.getMonth() + 1,
+                0,
+                23,
+                59,
+                59,
+                999
+            );
+        }
 
 
-        const timer = setInterval(function () {
+        /*
+        =====================================================
+        FORMAT DEADLINE DATE
+        =====================================================
+        */
 
-            const now =
-                new Date().getTime();
+        function updateDeadlineText(deadline) {
 
-            const distance =
-                launchDate - now;
+            const options = {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            };
 
+            document.getElementById("deadline-date")
+                .textContent =
+                deadline.toLocaleDateString(
+                    undefined,
+                    options
+                ) + " at 11:59 PM";
+        }
+
+
+        /*
+        =====================================================
+        UPDATE COUNTDOWN
+        =====================================================
+        */
+
+        function updateCountdown() {
+
+            const now = new Date();
+
+            let deadline = getMonthEnd();
+
+            let distance =
+                deadline.getTime() -
+                now.getTime();
+
+
+            /*
+            If the month has already ended,
+            calculate the next month's deadline.
+            */
+
+            if (distance <= 0) {
+
+                deadline =
+                    new Date(
+                        now.getFullYear(),
+                        now.getMonth() + 2,
+                        0,
+                        23,
+                        59,
+                        59,
+                        999
+                    );
+
+                distance =
+                    deadline.getTime() -
+                    now.getTime();
+            }
+
+
+            /*
+            Calculate time units
+            */
 
             const days =
                 Math.floor(
                     distance /
                     (1000 * 60 * 60 * 24)
                 );
-
 
             const hours =
                 Math.floor(
@@ -551,14 +1064,12 @@
                     (1000 * 60 * 60)
                 );
 
-
             const minutes =
                 Math.floor(
                     (distance %
                         (1000 * 60 * 60)) /
                     (1000 * 60)
                 );
-
 
             const seconds =
                 Math.floor(
@@ -568,44 +1079,58 @@
                 );
 
 
+            /*
+            Update HTML
+            */
+
             document.getElementById("days")
-                .innerText =
+                .textContent =
                 String(days).padStart(2, "0");
 
-
             document.getElementById("hours")
-                .innerText =
+                .textContent =
                 String(hours).padStart(2, "0");
 
-
             document.getElementById("minutes")
-                .innerText =
+                .textContent =
                 String(minutes).padStart(2, "0");
 
-
             document.getElementById("seconds")
-                .innerText =
+                .textContent =
                 String(seconds).padStart(2, "0");
 
 
-            if (distance < 0) {
+            /*
+            Update deadline text
+            */
 
-                clearInterval(timer);
+            updateDeadlineText(deadline);
+        }
 
-                document.getElementById("days")
-                    .innerText = "00";
 
-                document.getElementById("hours")
-                    .innerText = "00";
+        /*
+        =====================================================
+        CURRENT YEAR
+        =====================================================
+        */
 
-                document.getElementById("minutes")
-                    .innerText = "00";
+        document.getElementById("current-year")
+            .textContent =
+            new Date().getFullYear();
 
-                document.getElementById("seconds")
-                    .innerText = "00";
-            }
 
-        }, 1000);
+        /*
+        =====================================================
+        START COUNTDOWN
+        =====================================================
+        */
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
 
     </script>
 
